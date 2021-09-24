@@ -42,8 +42,8 @@ const fetchCoordsByIP = function(ip, callback) {
       return;
     }
     // if we get here, all's well and we got the data
-    const data = { latitude: JSON.parse(body).latitude, longitude: JSON.parse(body).longitude};
-    callback(null, data);
+    const { latitude, longitude } = JSON.parse(body);
+    callback(null, { latitude, longitude });
   });
 };
 
